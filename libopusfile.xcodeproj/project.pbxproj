@@ -14,6 +14,7 @@
 		8BBDB5101876A95C00CBDAC5 /* opusfile.c in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDB50A1876A95C00CBDAC5 /* opusfile.c */; };
 		8BBDB5111876A95C00CBDAC5 /* stream.c in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDB50B1876A95C00CBDAC5 /* stream.c */; };
 		8BBDB5121876A95C00CBDAC5 /* wincerts.c in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDB50C1876A95C00CBDAC5 /* wincerts.c */; };
+		CBA0A15422664A95BC47F13B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E1EDD57BA241118FDD000C /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F19DF9561CC45EF88302738 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		55E1EDD57BA241118FDD000C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BBDB4DC1876A13800CBDAC5 /* libopusfile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libopusfile.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BBDB4DF1876A13800CBDAC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8BBDB4ED1876A13800CBDAC5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -48,6 +51,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BBDB4E01876A13800CBDAC5 /* Foundation.framework in Frameworks */,
+				CBA0A15422664A95BC47F13B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +64,7 @@
 				8BBDB4E11876A13800CBDAC5 /* libopusfile */,
 				8BBDB4DE1876A13800CBDAC5 /* Frameworks */,
 				8BBDB4DD1876A13800CBDAC5 /* Products */,
+				4F19DF9561CC45EF88302738 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +82,7 @@
 				8BBDB4DF1876A13800CBDAC5 /* Foundation.framework */,
 				8BBDB4ED1876A13800CBDAC5 /* XCTest.framework */,
 				8BBDB4F01876A13800CBDAC5 /* UIKit.framework */,
+				55E1EDD57BA241118FDD000C /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BBDB4FF1876A13800CBDAC5 /* Build configuration list for PBXNativeTarget "libopusfile" */;
 			buildPhases = (
+				C65677029CA14816B17C2315 /* Check Pods Manifest.lock */,
 				8BBDB4D81876A13800CBDAC5 /* Sources */,
 				8BBDB4D91876A13800CBDAC5 /* Frameworks */,
 				8BBDB4DA1876A13800CBDAC5 /* CopyFiles */,
+				ACFDD495312B46AE9A87B383 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,6 +156,39 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ACFDD495312B46AE9A87B383 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C65677029CA14816B17C2315 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8BBDB4D81876A13800CBDAC5 /* Sources */ = {
@@ -238,10 +279,12 @@
 		};
 		8BBDB5001876A13800CBDAC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F19DF9561CC45EF88302738 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/libopusfile.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -255,10 +298,12 @@
 		};
 		8BBDB5011876A13800CBDAC5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F19DF9561CC45EF88302738 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/libopusfile.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -289,6 +334,7 @@
 				8BBDB5011876A13800CBDAC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

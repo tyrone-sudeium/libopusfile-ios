@@ -1,0 +1,13 @@
+PODS:
+  - libogg-ios (1.3.1)
+  - libopus-ios (1.1)
+
+DEPENDENCIES:
+  - libogg-ios (~> 1.3)
+  - libopus-ios (~> 1.1)
+
+SPEC CHECKSUMS:
+  libogg-ios: d6177b0ce87f9224198e35168c07702202ca798a
+  libopus-ios: 11e464ad781b2218b19d1010e1c85176e2f607ec
+
+COCOAPODS: 0.29.0
